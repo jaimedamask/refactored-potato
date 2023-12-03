@@ -1,0 +1,231 @@
+body {
+    background: #edf0f1;
+    padding: 80px 0 0 0;
+}
+
+body, input, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.noFill {
+    fill: none;
+}
+
+header {
+    background: #00a3cc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+    height: 80px;
+    left: 0;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+}
+
+header input {
+    background: rgba(255, 255, 255, 0.2);
+    border: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 25px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 25px;
+    box-shadow: none;
+    color: #fff;
+    float: left;
+    font-size: 20px;
+    font-weight: 400;
+    height: 50px;
+    outline: none;
+    padding: 0 60px 0 0;
+    text-indent: 18px;
+    width: 100%;
+}
+
+header input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+header input:-moz-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+header input::-moz-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+header input::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+header button {
+    background: #fff;
+    border: 0px;
+    border-radius: 25px;
+    box-shadow: none;
+    cursor: pointer;
+    height: 50px;
+    outline: none;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 50px;
+    z-index: 2;
+}
+
+header button svg {
+    height: 16px;
+    left: 50%;
+    margin: -8px 0 0 -8px;
+    position: absolute;
+    right: 50%;
+    width: 16px;
+}
+
+header button svg .fill {
+    fill: #00a3cc;
+}
+
+.container {
+    float: left;
+    padding: 15px;
+    width: 100%;
+}
+
+ul.todo {
+    float: left;
+    width: 100%;
+}
+
+ul.todo li {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+    color: #444;
+    float: left;
+    font-size: 20px;
+    font-weight: 500;
+    min-height: 50px;
+    line-height: 22px;
+    margin: 0 0 10px 0;
+    padding: 14px 100px 14px 14px; /* Text breaks before buttons */
+    position: relative;
+    width: 100%;
+}
+
+ul.todo li:last-of-type {
+    margin: 0;
+}
+
+ul.todo li .buttons {
+    height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+ul.todo li .buttons button {
+    background: none;
+    border: 0px;
+    box-shadow: none;
+    cursor: pointer;
+    float: left;
+    height: 50px;
+    outline: none;
+    position: relative;
+    width: 50px;
+}
+
+ul.todo li .buttons button:last-of-type:before {
+    background: #edf0f1;
+    content: "";
+    height: 30px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 1px;
+}
+
+ul.todo li .buttons button svg {
+    height: 22px;
+    left: 50%;
+    margin: -11px 0 0 -11px;
+    position: absolute;
+    top: 50%;
+    width: 22px;
+}
+
+ul.todo li .buttons button.complete svg {
+    border: 1.5px solid #00a3cc;
+    border-radius: 11px;
+
+    transition: background 0.2s ease;
+}
+
+ul.todo#completed li .buttons button.complete svg {
+    background: #00a3cc;
+    border: 0px;
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg {
+    background: rgba(0, 163, 204, 0.5);
+}
+
+ul.todo:not(#completed) li .buttons button.complete:hover svg .fill {
+    fill: #fff;
+}
+
+ul.todo#completed li .buttons button.complete svg .fill {
+    fill: #fff;
+}
+
+ul.todo li .buttons button svg .fill {
+    transition: fill 0.2s ease;
+}
+
+ul.todo li .buttons button.remove svg .fill {
+    fill: #c0cecb;
+}
+
+ul.todo li .buttons button.remove:hover svg .fill {
+    fill: #e85656;
+}
+
+ul.todo li .buttons button.complete svg .fill {
+    fill: #00a3cc;
+}
+
+ul.todo#completed {
+    padding: 60px 0 0 0;
+    position: relative;
+}
+
+ul.todo#completed:before {
+    background: #d8e5e0;
+    content: '';
+    height: 1px;
+    left: 25%;
+    position: absolute;
+    top: 30px;
+    width: 50%;
+}
+
+ul.todo#todo:empty:after {
+    content: 'You have no tasks to complete';
+    margin: 15px 0 0 0;
+}
+
+ul.todo#completed:empty:after {
+    content: 'You have not completed any tasks yet';
+}
+
+ul.todo#todo:after, ul.todo#completed:after {
+    color: #aaa;
+    display: block;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
